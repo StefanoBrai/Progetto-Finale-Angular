@@ -1,0 +1,41 @@
+<div class="table">
+  <table mat-table matSort [dataSource]="mails" class="mat-elevation-z8">
+    <ng-container matColumnDef="protId">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Protocol Id</th>
+      <td mat-cell *matCellDef="let mail">{{ mail.protId }}</td>
+    </ng-container>
+    <ng-container matColumnDef="startDate">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Data Invio</th>
+      <td mat-cell *matCellDef="let mail">{{ mail.startDate }}</td>
+    </ng-container>
+    <ng-container matColumnDef="receiveDate">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Data Ricezione</th>
+      <td mat-cell *matCellDef="let mail">{{ mail.receiveDate }}</td>
+    </ng-container>
+    <ng-container matColumnDef="type">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Tipo</th>
+      <td mat-cell *matCellDef="let mail">{{ mail.type }}</td>
+    </ng-container>
+    <ng-container matColumnDef="sender">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Mittente</th>
+      <td mat-cell *matCellDef="let mail">{{ mail.sender }}</td>
+    </ng-container>
+    <ng-container matColumnDef="subject">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Ricevente</th>
+      <td mat-cell *matCellDef="let mail">{{ mail.subject }}</td>
+    </ng-container>
+    <ng-container matColumnDef="object">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Oggetto</th>
+      <td mat-cell *matCellDef="let mail">{{ mail.object }}</td>
+    </ng-container>
+    <ng-container matColumnDef="attachment">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Allegati</th>
+      <td mat-cell *matCellDef="let mail">{{ mail.attachment }}</td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+    <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+  </table>
+</div>
+
+<mat-paginator class="paginator" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]">
+</mat-paginator>

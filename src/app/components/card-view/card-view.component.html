@@ -1,0 +1,34 @@
+<div class="grid-container">
+  <mat-grid-list cols="4" rowHeight="275px">
+    <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            {{card.object}}
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          ID: {{card.protId}}
+          <br>
+          DATA INVIO: {{card.startDate}}
+          <br>
+          DATA RICEZIONE: {{card.receiveDate}}
+          <br>
+          TIPO: {{card.type}}
+          <br>
+          MITTENTE {{card.sender}}
+          <br>
+          RICEVENTE {{card.subject}}
+          <br>
+          ALLEGATI: {{card.attachment}}
+        </mat-card-content>
+        <mat-card-actions class="card-button">
+          <button mat-raised-button	color="accent" (click)='openDialog(card)'>Dettagli</button>
+        </mat-card-actions>
+        <!-- <div class="div-button-details">
+            <button mat-raised-button	color="accent" (click)='openDialog(card)'>Dettagli</button>
+          </div> -->
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

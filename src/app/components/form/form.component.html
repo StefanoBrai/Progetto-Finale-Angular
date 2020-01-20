@@ -1,0 +1,40 @@
+<div class="div-form">
+  <form [formGroup]="mailsForm" (ngSubmit)="saveOrUpdateMail()">
+    <mat-form-field>
+      <input type="text" matInput placeholder="Data Invio" formControlName="startDate">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Data Ricezione" formControlName="receiveDate">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <mat-select [placeholder]="typePlaceHolder" formControlName="type">
+        <mat-option [value]=1>Entrata</mat-option>
+        <mat-option [value]=2>Uscita</mat-option>
+        <mat-option [value]=3>Interna</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Mittente" formControlName="sender">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Ricevente" formControlName="subject">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Oggetto" formControlName="object">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Allegati" formControlName="attachment">
+    </mat-form-field>
+    <br>
+    <button *ngIf="!mailToChange" mat-raised-button color="accent" type="submit" class="btn-success">Inserisci Nuova
+      Mail</button>
+    <button *ngIf="mailToChange" mat-raised-button color="accent" type="submit" class="btn-success">Update
+      Mail</button>
+  </form>
+</div>

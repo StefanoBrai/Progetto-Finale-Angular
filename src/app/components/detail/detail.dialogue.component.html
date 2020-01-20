@@ -1,0 +1,20 @@
+<table>
+  <tr>
+    <td class="td-detail">
+      <h3 class="mat-title">Dettagli: {{mail.protId}}</h3>
+      <mat-list>
+        <mat-list-item>Data Invio: {{mail.startDate}}</mat-list-item>
+        <mat-list-item>Data ricezione: {{mail.receiveDate}}</mat-list-item>
+        <mat-list-item>Tipo: {{mail.type}}</mat-list-item>
+        <mat-list-item>Mittente: {{mail.sender}}</mat-list-item>
+        <mat-list-item>Ricevente: {{mail.subject}}</mat-list-item>
+        <mat-list-item>Oggetto: {{mail.object}}</mat-list-item>
+        <mat-list-item>Allegati: {{mail.attachment}}</mat-list-item>
+      </mat-list>
+      <button class="button-modify" mat-raised-button	color="accent" (click)="formDisplay=!formDisplay">Modifica</button>
+    </td>
+    <td *ngIf="formDisplay" class="td-detail">
+      <app-form [mailToChange]="mail"></app-form>
+    </td>
+  </tr>
+</table>

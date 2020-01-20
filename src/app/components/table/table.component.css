@@ -1,0 +1,19 @@
+table {
+  width: 100%;
+}
+
+.table {
+  overflow-x: auto;
+  padding-top: 50px;
+}
+
+.paginator {
+  /* min-width: 576px; */
+  bottom: 0px;
+  position: sticky;
+  z-index: 10;
+}
+
+.mat-cell {
+  min-width: 100px;
+}

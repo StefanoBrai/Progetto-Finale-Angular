@@ -1,0 +1,37 @@
+<div [class.alternative]="otherTheme">
+  <mat-sidenav-container class="sidenav-container" fullscreen>
+    <!-- <mat-sidenav #drawer class="sidenav" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="false" (click)="drawer.close()"> -->
+    <mat-sidenav #drawer class="sidenav" [attr.role]="isHandset ? 'dialog' : 'navigation'" [opened]="false">
+      <mat-toolbar>MENU</mat-toolbar>
+      <mat-nav-list class="nav-list">
+        <button mat-icon-button routerLink="" (click)="drawer.close()">
+          <mat-icon aria-hidden="false">home</mat-icon> HOME
+        </button>
+        <br>
+        <button mat-icon-button routerLink="app-form" (click)="drawer.close()">
+          <mat-icon aria-hidden="false">mail</mat-icon> INSERISCI NUOVA MAIL
+        </button>
+        <br>
+        <button mat-icon-button routerLink="app-table" (click)="drawer.close()">
+          <mat-icon aria-hidden="false"> table_chart</mat-icon> TABELLA
+        </button>
+        <br><br><br>
+        <mat-slide-toggle class="slide-theme" (click)="changeTheme()" (click)="drawer.close()">TEMA SCURO</mat-slide-toggle>
+        <!-- <button (click)="changeTheme()" mat-icon-button>
+          <mat-icon aria-hidden="false" > color_lens</mat-icon> TEMA
+        </button> -->
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar color="primary">
+        <button type="mat-button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <span>Gestore Mail</span>
+      </mat-toolbar>
+      <router-outlet></router-outlet>
+      <!-- Add Content Here -->
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

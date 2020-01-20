@@ -1,0 +1,22 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+/*Light theme*/
+$my-light-theme-primary-color: mat-palette($mat-indigo);
+$my-light-theme-secondary-color: mat-palette($mat-orange);
+$my-light-theme-app-warn: mat-palette($mat-red);
+
+$my-app-theme-light: mat-light-theme($my-light-theme-primary-color, $my-light-theme-secondary-color, $my-light-theme-app-warn);
+
+@include angular-material-theme($my-app-theme-light);
+
+/*Dark theme*/
+$my-dark-theme-primary-color: mat-palette($mat-gray, 900);
+$my-dark-theme-secondary-color: mat-palette($mat-teal);
+$my-dark-theme-app-warn: mat-palette($mat-red);
+
+$my-app-theme-dark: mat-dark-theme($my-dark-theme-primary-color, $my-dark-theme-secondary-color, $my-dark-theme-app-warn);
+
+.alternative {
+    @include angular-material-theme($my-app-theme-dark);
+}
